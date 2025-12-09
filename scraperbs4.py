@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import sys
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
@@ -18,6 +19,5 @@ def fetch_website_contents(url):
     return (title + "\n\n" + text)[:2000]
 
 if __name__ == "__main__":
-    import sys
-    url = sys.argv[1]
-    print(fetch_website_contents(url))
+    url = sys.argv[1]  # URL берём из аргументов
+    print(fetch_website_contents(url))  # выводим текст
